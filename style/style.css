@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* ## Colors */
+
+  /* ### Primary */
+
+  --Cyan: hsl(179, 62%, 43%);
+  --light_Cyan: hsl(179, 63%, 50%);
+  --Bright_Yellow: hsl(71, 73%, 54%);
+
+  /* ### Neutral */
+
+  --Light_Gray: hsl(204, 43%, 93%);
+  --Grayish_Blue: hsl(218, 22%, 67%);
+
+  --spaces: 50px;
+}
+
+@font-face {
+  font-family: karla;
+  src: url(../fonts/Karla-Regular.ttf);
+}
+
+body {
+  font-size: 18px;
+  display: grid;
+  display: -ms-grid;
+  display: -moz-grid;
+  place-items: center;
+  min-height: 100vh;
+  font-family: "karla";
+  background-color: var(--Light_Gray);
+}
+
+.card {
+  display: grid;
+  display: -ms-grid;
+  display: -moz-grid;
+  grid-template: "one one one one" "two two three three";
+  width: fit-content;
+  height: fit-content;
+}
+
+header {
+  grid-area: one;
+  padding: var(--spaces);
+  background-color: white;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+header h1 {
+  color: var(--Cyan);
+  margin: 25px 0;
+}
+header h2 {
+  color: var(--Bright_Yellow);
+  margin: 25px 0;
+}
+
+header p {
+  color: var(--Grayish_Blue);
+  line-height: 25px;
+}
+main {
+  grid-area: two;
+  padding: var(--spaces);
+  background-color: var(--Cyan);
+  border-bottom-left-radius: 10px;
+  color: white;
+}
+
+main h2 {
+  margin: 10px 0;
+}
+.price {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+}
+.value {
+  font-size: 35px;
+  display: flex;
+  align-items: center;
+}
+.value span {
+  font-size: 15px;
+  margin: 0 15px;
+  color: var(--Light_Gray);
+}
+.price h3 + span {
+  font-size: smaller;
+  color: var(--Grayish_Blue);
+}
+.access {
+  margin: 10px 0;
+}
+
+.price button {
+  margin: 20px 0;
+  border: none;
+  padding: 20px;
+  background-color: var(--Bright_Yellow);
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 4px 5px 8px 1px rgb(87, 87, 87);
+  font-size: 18px;
+  color: white;
+}
+aside {
+  grid-area: three;
+  padding: var(--spaces);
+  background-color: var(--light_Cyan);
+  border-bottom-right-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+aside h1 {
+  margin: 10px 0;
+  color: white;
+}
+aside h1 + p {
+  margin-top: 20px;
+}
+
+aside p {
+  margin: 3px;
+  color: var(--Light_Gray);
+}
+
+/* Mobile Design */
+
+@media (max-width: 768px) {
+  body {
+    height: 150vh;
+  }
+  .card {
+    width: 450px;
+    grid-template:
+      "one one one "
+      "two two two"
+      "three three three";
+  }
+  main {
+    border-radius: 0;
+  }
+  aside {
+    border-bottom-left-radius: 10px;
+  }
+}
