@@ -43,6 +43,7 @@ body {
   grid-template: "one one one one" "two two three three";
   width: fit-content;
   height: fit-content;
+  padding: 2rem 0;
 }
 
 header {
@@ -101,8 +102,9 @@ main h2 {
 }
 
 .price button {
-  margin: 20px 0;
+  margin-top: 5rem ;
   border: none;
+  width: 22rem;
   padding: 20px;
   background-color: var(--Bright_Yellow);
   font-weight: bold;
@@ -119,11 +121,15 @@ aside {
   display: flex;
   flex-direction: column;
 }
-aside h1 {
+
+
+.aside-title {
   margin: 10px 0;
   color: white;
+  font-size: 2rem;
+  font-weight: bold;
 }
-aside h1 + p {
+.aside-title + p {
   margin-top: 20px;
 }
 
